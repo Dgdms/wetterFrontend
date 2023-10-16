@@ -69,7 +69,7 @@ export default {
   methods: {
     updateWeather() {
       this.weatherForecasts = {}
-      this.$http.get('http://192.168.0.253:3000/weather', {
+      this.$http.get('https://us-central1-wetterapp-9b933.cloudfunctions.net/app/weather', {
         params: {
           region: this.region,
           radius: this.radius,
