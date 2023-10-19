@@ -30,12 +30,13 @@
               <v-card-title>{{ forecast.weather.city }} </v-card-title>
               <v-card-text>
                 <p>
+                 <span class="temperature-text"> <v-icon color="red" size="small">mdi-heart</v-icon> {{forecast.weather.feels_like}}°C</span>
+                </p>
+                <p>
                   <span class="large-text">{{ forecast.weather.max }}°C / </span>
                   <span class="small-text">{{ forecast.weather.min }}°C.</span>
                 </p>
-                <p>
-                  <v-icon color="red" size="small">mdi-heart</v-icon> {{forecast.weather.feels_like}}°C
-                </p>
+
               </v-card-text>
             </v-card>
           </v-col>
@@ -69,7 +70,7 @@ export default {
   methods: {
     updateWeather() {
       this.weatherForecasts = {}
-      this.$http.get('https://us-central1-wetterapp-9b933.cloudfunctions.net/app/weather', {
+      this.$http.get('http://172.16.30.123:3000/weather', {
         params: {
           region: this.region,
           radius: this.radius,
@@ -93,8 +94,11 @@ export default {
 .background {
  background-color: #483285;
 }
-.large-text {
+.temperature-text {
   font-size: 20px;
+}
+.large-text {
+  font-size: 15px;
 }
 
 .small-text {
