@@ -108,9 +108,8 @@ export default {
 <style>
 .align-center-justify-center {
   display: flex;
-  justify-content: center; /* Horizontal zentrieren */
-  align-items: center; /* Vertikal zentrieren */
-  width: 100%;
+  justify-content: center;
+  align-items: center;
   height: 100%;
 }
 .temperature-text {
